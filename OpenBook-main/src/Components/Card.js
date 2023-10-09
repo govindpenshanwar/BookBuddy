@@ -1,5 +1,5 @@
-import react from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
+// import  from "react/cjs/react.development";
 import Modal from "./Modal";
 const Card = ({ book }) => {
 

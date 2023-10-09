@@ -5,7 +5,8 @@
     font-family: 'Poppins', sans-serif;
 }
 :root{
-    --primary-color:rgb(160, 175, 183);
+    --primary-color:#F0F0F0;
+    /* rgba(123, 180, 215, 0.398); */
     --secondary-color:rgb(0, 0, 0);
 }
 body{
@@ -14,9 +15,38 @@ body{
 html{
     font-size: 75.5%;
 }
+.nav-logo{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.nav-title{
+    margin-left: 8.5rem;
+    margin-top: -6rem;
+    font-size: xx-large;
+    text-decoration: none;
+    position: relative;
+
+}
+.nav-title::before{
+    content: "";
+    position: absolute;
+    width: 15rem;
+    height: 3px; /* Adjust the thickness of the underline */
+    bottom: 0;
+    left: 0;
+    background-color: tomato; /* Adjust the color of the underline */
+    transform: scaleX(0); /* Initial state: no width */
+    transform-origin:bottom left; /* Start the transformation from the left */
+    transition: transform 0.3s ease
+}
+.nav-title:hover::before{
+    transform: scaleX(1); /* Full width */
+  transform-origin:bottom left;
+
+}
 .header{
     width: 100%;
-    height: 500px;
+    height: 600px;
     color: var(--secondary-color);
     box-shadow: 0 5px 10px var(--secondary-color);
     display: flex;
@@ -34,7 +64,7 @@ html{
     background-size:700px 600px ;
     background-repeat: no-repeat;
     /* linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), */
-    clip-path: circle(60% at left 300px);
+    clip-path: circle(62% at left 300px);
     z-index: -1;
 }
 .row2{
@@ -50,8 +80,8 @@ html{
     color: black;
 }
 .row2 img{
-    margin-top: 30px;
-    width: 250px;
+    margin-top: -20px;
+    width: 220px;
 }
 .row1 h1{
     font-size: 3rem;
@@ -139,7 +169,8 @@ html{
     top: 0;
     bottom: 0;
     right: 0;
-    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+    background:rgba(211, 211, 211, 0.039) ;  
+    /* linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)) */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,7 +178,7 @@ html{
 .overlay-inner{
     background: white;
     width: 700px;
-    height: 550px;
+    height: 600px;
     padding: 1.5rem;
     position: relative;
     box-sizing: border-box;
@@ -201,4 +232,7 @@ footer{
     margin-top: 1rem;
     margin-bottom: 10px;
     color: rgb(45, 43, 43);
+}
+.input-btn:hover{
+    background-color: lightgrey;
 }

@@ -5,16 +5,18 @@ import axios from "axios";
 const Main=()=>{
     const [search,setSearch]=useState("");
     const [bookData,setData]=useState([]);
+    const [error, setError] = useState(null);
     const searchBook=(evt)=>{
         if(evt.key==="Enter")
         {
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU'+'&maxResults=40')
-            .then(res=>setData(res.data.items))
-            .catch(err=>console.log(err))
+            axios.get("https://www.googleapis.com/books/v1/volumes?q="+search+"&key=AIzaSyCJtjb6uz2DfMgz8Ww9wWX5lzIr-N829j0"+'&maxResults=40')
+            .then(res=>setData(res.data.items)(setError(null)))
+            .catch(err=>console.log(err)( setError("Error fetching data. Please try again.")))
         }
     }
     return(
         <>
+        
             <div className="header">
                 <div className="row1">
                     <h1>A room without books is like<br/> a body without a soul.</h1>
@@ -25,9 +27,9 @@ const Main=()=>{
                         <input type="text" placeholder="Enter Your Book Name"
                         value={search} onChange={e=>setSearch(e.target.value)}
                         onKeyPress={searchBook}/>
-                        <button><i className="fas fa-search"></i></button>
+                        <button className="input-btn"><i className="fas fa-search"></i></button>
                     </div>
-                    <img src="./images/bg6.png" alt="" />
+                    <img src="./images/bg9.png" alt="A boy Reading Book" />
                 </div>
             </div>
 

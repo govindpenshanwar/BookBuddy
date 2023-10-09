@@ -19,7 +19,7 @@ const Modal=({show,item,onClose})=>{
                             <a href={item.volumeInfo.previewLink}><button>More</button></a>
                         </div>
                     </div>
-                    <h4 className="description">{item.volumeInfo.description}</h4>
+                    <h4 className="description"> <h3>Description :</h3>{item.volumeInfo.description}</h4>
                 </div>
             </div>
         </>
